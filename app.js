@@ -29,7 +29,8 @@ function fromDollarToYen(dollar){
 
 
 function fromYenToPound(yen){
-    let pound=(oneEuroIs.GBP/(1/oneEuroIs.JPY))*yen;
+    let pound=(oneEuroIs.GBP*(1/oneEuroIs.JPY))*yen;
+    //pound=pound.toFixed(2);
     return pound;
    }
    
@@ -41,4 +42,4 @@ console.log(fromYenToPound(1));
 
 // exporta la función para usarla en otros archivos 
 // (similar a la palabra clave `export` cuando se usa webpack)
-module.exports = { sum, fromEuroToDollar };
+module.exports = { sum, fromEuroToDollar,fromDollarToYen, fromYenToPound};
